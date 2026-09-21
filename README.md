@@ -15,11 +15,13 @@ Gestor local de servidores Minecraft con interfaz gráfica. Sin dependencias: so
 
 ## Uso
 
-**Opción A — instalador (recomendado):** descarga `MineHost-Setup-*.exe` desde
-[Releases](https://github.com/4DRI4N-OFF/minehost/releases). Asistente de
-instalación, acceso directo y desinstalador incluidos. No requiere Python.
+**Opción A — instalador Tauri (recomendado):** descarga `MineHost_*_x64-setup.exe`
+desde [Releases](https://github.com/4DRI4N-OFF/minehost/releases). App nativa
+ligera (~6 MB), sin Python ni consola.
 
-**Opción B — portable:** descarga `MineHost.exe` y ejecútalo directamente.
+**Opción B — instalador clásico:** `MineHost-Setup-*.exe` (versión Python).
+
+**Opción C — desde código:** `python minehost.py`.
 
 **Opción B — desde código:**
 

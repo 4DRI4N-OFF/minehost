@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MineHost</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <header>
+    <h1>⛏ MineHost</h1>
+    <div class="status"><span id="dot">●</span><span id="statusText">Detenido</span></div>
+  </header>
+
+  <nav>
+    <button class="tab active" data-tab="server">Servidor</button>
+    <button class="tab" data-tab="console">Consola</button>
+    <button class="tab" data-tab="tunnels">Túneles</button>
+    <button class="tab" data-tab="settings">Ajustes</button>
+  </nav>
+
+  <main>
+    <section id="tab-server" class="panel active">
+      <div class="grid">
+        <label>Tipo de servidor</label>
+        <select id="serverType">
+          <option value="Purpur">Purpur ✓</option>
+          <option value="Paper">Paper (próximamente)</option>
+          <option value="Vanilla">Vanilla (próximamente)</option>
+          <option value="Forge">Forge (próximamente)</option>
+          <option value="Fabric">Fabric (próximamente)</option>
+        </select>
+        <span></span>
+
+        <label>Versión</label>
+        <select id="version"><option>cargando...</option></select>
+        <button id="btnDownload">Descargar</button>
+        <div id="dlBar"><div id="dlFill"></div></div>
+
+        <label>RAM mín (GB)</label>
+        <input id="ramMin" type="number" min="1" max="16" value="1" />
+        <span></span>
+
+        <label>RAM máx (GB)</label>
+        <input id="ramMax" type="number" min="1" max="32" value="4" />
+        <span></span>
+
+        <label>Puerto</label>
+        <input id="port" type="number" min="1024" max="65535" value="25565" />
+        <span></span>
+      </div>
+
+      <label class="check"><input id="eula" type="checkbox" /> Acepto el EULA de Mojang</label>
+
+      <div class="row">
+        <button id="btnStart" class="accent">▶ Iniciar</button>
+        <button id="btnStop">■ Detener</button>
+        <button id="btnKill" class="danger">Forzar cierre</button>
+      </div>
+
+      <h3>Jugadores <span id="playerCount" class="muted">0 en línea</span>
+        <button id="btnPlayers" class="small">↻</button>
+      </h3>
+      <ul id="playerList"></ul>
+    </section>
+
+    <section id="tab-console" class="panel">
+      <pre id="console"></pre>
+      <div class="row">
+        <input id="cmd" placeholder="Escribe un comando (stop, list, whitelist add ...) y pulsa Enter" />
+        <button id="btnSend">Enviar</button>
+      </div>
+    </section>
+
+    <section id="tab-tunnels" class="panel">
+      <p class="muted">El servidor debe estar iniciado antes de abrir un túnel.</p>
+      <button id="btnPlayit" class="accent">🚀 Abrir túnel Playit (recomendado)</button>
+      <button id="btnNgrok">🌐 Abrir túnel ngrok</button>
+      <button id="btnStopTunnel">Cerrar túnel</button>
+      <h3>Dirección pública</h3>
+      <p id="pubAddr" class="addr">aún sin configurar</p>
+      <pre id="tunnelLog"></pre>
+    </section>
+
+    <section id="tab-settings" class="panel">
+      <h3>Java detectado</h3>
+      <p id="javaInfo" class="muted">detectando...</p>
+      <div class="row">
+        <button id="btnSave">💾 Guardar configuración</button>
+        <button id="btnIp">📡 Ver mi IP local</button>
+      </div>
+      <p class="muted">MineHost · MIT</p>
+    </section>
+  </main>
+</body>
+</html>
