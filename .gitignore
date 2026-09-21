@@ -19,3 +19,8 @@ playit_*.txt
 # Python
 __pycache__/
 *.pyc
+
+# PyInstaller
+dist/
+build/
+*.spec
