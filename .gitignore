@@ -1,0 +1,21 @@
+# Runtime del servidor (se genera al usar la app)
+server/
+MCServer/
+*.jar
+world/
+logs/
+cache/
+versions/
+libraries/
+manager_config.json
+eula.txt
+server.properties
+whitelist.json
+ops.json
+usercache.json
+banned-*.json
+playit_*.txt
+
+# Python
+__pycache__/
+*.pyc
