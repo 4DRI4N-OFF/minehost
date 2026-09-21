@@ -24,3 +24,6 @@ __pycache__/
 dist/
 build/
 *.spec
+
+# Inno Setup
+installer-output/
