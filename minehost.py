@@ -131,7 +131,7 @@ class Manager:
                 url = f"{PURPUR_API}/{v}/{b}/download"
                 dest = BASE_DIR / "purpur.jar"
                 self.log(f"Descargando Purpur {v} build {b}...")
-    req = urllib.request.Request(url, headers={"User-Agent": "MineHost/1.0"})
+                req = urllib.request.Request(url, headers={"User-Agent": "MineHost/1.0"})
                 with urllib.request.urlopen(req, timeout=60) as r, open(dest, "wb") as f:
                     shutil.copyfileobj(r, f)
                 self.log(f"✓ Guardado en {dest} ({dest.stat().st_size/1e6:.1f} MB)")
