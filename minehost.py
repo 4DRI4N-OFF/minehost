@@ -1,4 +1,4 @@
-"""Minecraft Server Manager - Purpur (local) con GUI Tkinter."""
+"""MineHost - gestor local de servidores Minecraft con GUI Tkinter."""
 import json, os, re, shutil, socket, subprocess, sys, threading, urllib.request
 from pathlib import Path
 from tkinter import (Tk, ttk, StringVar, IntVar, BooleanVar, Text, END,
@@ -44,14 +44,14 @@ def find_best_java():
     return best, best_v
 
 def api_get(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "MCServerManager/1.0"})
+                req = urllib.request.Request(url, headers={"User-Agent": "MineHost/1.0"})
     with urllib.request.urlopen(req, timeout=20) as r:
         return json.loads(r.read().decode())
 
 class Manager:
     def __init__(self, root):
         self.root = root
-        root.title("Purpur Server Manager (Local)")
+        root.title("MineHost")
         root.geometry("780x620")
         self.cfg = load_config()
         self.proc = None
@@ -131,7 +131,7 @@ class Manager:
                 url = f"{PURPUR_API}/{v}/{b}/download"
                 dest = BASE_DIR / "purpur.jar"
                 self.log(f"Descargando Purpur {v} build {b}...")
-                req = urllib.request.Request(url, headers={"User-Agent": "MCServerManager/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "MineHost/1.0"})
                 with urllib.request.urlopen(req, timeout=60) as r, open(dest, "wb") as f:
                     shutil.copyfileobj(r, f)
                 self.log(f"✓ Guardado en {dest} ({dest.stat().st_size/1e6:.1f} MB)")

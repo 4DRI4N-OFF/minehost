@@ -1,44 +1,47 @@
-# Purpur Server Manager
+# MineHost
 
-Herramienta con GUI (Tkinter) para hostear un servidor de Minecraft **Purpur** de manera local en Windows. Sin dependencias externas: solo Python estándar.
+Gestor local de servidores Minecraft con interfaz gráfica. Sin dependencias: solo Python estándar.
 
-## Funciones
+![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![Platform](https://img.shields.io/badge/platform-windows-lightgrey) ![License](https://img.shields.io/badge/license-MIT-green)
 
-- Descarga Purpur (última build) desde la API oficial con selector de versión
-- Detección automática del mejor Java instalado (Purpur 26.x exige **Java 25+**)
-- Configuración de RAM mín/máx, puerto y EULA
-- Consola en vivo con envío de comandos (`stop`, `whitelist add ...`, etc.)
-- Botón **🌐 Túnel público (ngrok)** y **🚀 Playit** para jugar con amigos sin port forwarding
-- Muestra tu IP local para conexión en LAN (`localhost:25565`)
+## Estado
 
-## Requisitos
-
-- Python 3.10+ (incluye Tkinter en Windows)
-- Java 25+ ([Temurin](https://adoptium.net)) para Purpur 26.x
-- Opcional: [ngrok](https://ngrok.com/download) o [Playit](https://playit.gg) para exponer el servidor
+| Tipo    | Soporte |
+|---------|---------|
+| Purpur  | ✅      |
+| Paper   | 🔜      |
+| Vanilla | 🔜      |
+| Forge / Fabric | 🔜 |
 
 ## Uso
 
 ```bash
-python minecraft_server_manager.py
+python minehost.py
 ```
 
-1. Espera a que carguen las versiones → **Actualizar Purpur**
-2. Marca **Acepto EULA** → **Guardar config**
-3. **▶ Iniciar** → conéctate a `localhost:25565`
+1. Elige versión → **Actualizar**
+2. Acepta el EULA → **Guardar config**
+3. **▶ Iniciar** → `localhost:25565`
 
-## Jugar con amigos (Playit)
+## Funciones
 
-1. Inicia el servidor y espera al `Done`
-2. Pulsa **🚀 Playit** → abre el link `playit.gg/claim/...` y reclama el agente
-3. En playit.gg crea un túnel **Minecraft Java** con puerto local `25565`
-4. Comparte la dirección (ej. `algo.mc.ply.gg`)
+- Descarga automática del servidor desde la API oficial
+- Detección del mejor Java instalado (Purpur 26.x requiere Java 25+)
+- RAM, puerto y EULA configurables
+- Consola en vivo con envío de comandos
+- Exposición pública vía **ngrok** o **Playit** (juega con amigos sin abrir puertos)
 
-## Estructura generada
+## Amigos por internet (Playit)
+
+1. Inicia el servidor, espera al `Done`
+2. Pulsa **🚀 Playit**, reclama el agente en el link mostrado
+3. Crea un túnel **Minecraft Java** → puerto `25565`
+4. Comparte la dirección generada
+
+## Desarrollo
 
 ```
-server/          # se crea al lado del script: purpur.jar, world, plugins, logs...
-manager_config.json
+minehost.py   # app (Tkinter, stdlib)
 ```
 
 ## Licencia
