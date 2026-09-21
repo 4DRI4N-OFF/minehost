@@ -1,5 +1,7 @@
 # MineHost
 
+![MineHost](minehost-tauri/src/assets/logo.png)
+
 Gestor local de servidores Minecraft con interfaz gráfica. Sin dependencias: solo Python estándar.
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![Platform](https://img.shields.io/badge/platform-windows-lightgrey) ![License](https://img.shields.io/badge/license-MIT-green)

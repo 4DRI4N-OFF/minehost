@@ -78,6 +78,10 @@ header h1 {
   color: #fff;
   text-shadow: 0 1px 0 rgba(11,61,79,0.35), 0 0 18px rgba(255,255,255,0.55), 0 2px 6px rgba(11,61,79,0.4);
 }
+.logo {
+  height: 64px; width: auto;
+  filter: drop-shadow(0 3px 8px rgba(11, 61, 79, 0.45));
+}
 .status {
   display: flex; gap: 8px; align-items: center;
   background: var(--glass); border: 1px solid var(--glass-border);
